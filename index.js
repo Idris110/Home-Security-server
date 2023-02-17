@@ -43,5 +43,5 @@ app.post('/api/set', (req, res) => {
 });
 
 //PORT ENVIRONMENT VARIABLE debug : heroku logs -t --app esp8266-api-testing
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`Listening on port ${port}..`));
