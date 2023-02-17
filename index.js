@@ -14,13 +14,11 @@ app.use(express.json());
 
 
 let obj = {
-    us1 :"320",
-    us2 :"195",
-    temp :"29",
-    humid :"70",
+    us1 :"100",
+    us2 :"100",
     infra :"0",
     bell :"0",
-    lockBr :"0",
+    lockBr :"0"
 };
 
 let back = {
@@ -39,6 +37,16 @@ app.get('/', (req, res) => {
 // });
 app.get('/api', (req, res) => { //esp reads
     res.send(obj);
+});
+
+app.get('/api/testing', (req, res) => { //esp reads
+    res.send({
+        us1 :"320",
+        us2 :"195",
+        infra :"1",
+        bell :"0",
+        lockBr :"1"
+    });
 });
 
 app.get('/api/ring', (req, res) => { //esp reads
@@ -70,8 +78,6 @@ app.post('/api/set', (req, res) => {
         us1: req.body.us1,
         us2 :req.body.us2,
         temp :req.body.temp,
-        humid :req.body.humid,
-        infra :req.body.infra,
         bell :req.body.bell,
         lockBr :req.body.lockBr
     };
