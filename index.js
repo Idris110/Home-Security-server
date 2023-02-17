@@ -23,6 +23,11 @@ let obj = {
     lockBr :"0",
 };
 
+let back = {
+    alert :"0",
+    known :"0"
+};
+
     
 app.get('/', (req, res) => {
     res.send("Home page")
@@ -45,6 +50,16 @@ app.get('/api', (req, res) => { //esp reads
 //      res.send(obj);
 // });
 
+app.post('/api/alert', (req,res) => {
+    back.alert= req.body.alert;
+    res.send("sucessful")
+})
+
+app.post('/api/known', (req,res) => {
+    back.known= req.body.known;
+    res.send("sucessful")
+})
+
 app.post('/api/set', (req, res) => {
 
     obj = {
@@ -57,7 +72,7 @@ app.post('/api/set', (req, res) => {
         lockBr :req.body.lockBr
     };
     console.log(req.body);
-    res.send(obj);
+    res.send(back);
 });
 
 //PORT ENVIRONMENT VARIABLE debug : heroku logs -t --app esp8266-api-testing
