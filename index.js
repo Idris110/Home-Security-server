@@ -41,6 +41,10 @@ app.get('/api', (req, res) => { //esp reads
     res.send(obj);
 });
 
+app.get('/api/ring', (req, res) => { //esp reads
+    res.send(back.alert);
+});
+
 // app.post('/api/set', (req, res) => {
 
 //     obj = {
@@ -74,6 +78,8 @@ app.post('/api/set', (req, res) => {
     console.log(req.body);
     res.send(back);
 });
+
+
 
 //PORT ENVIRONMENT VARIABLE debug : heroku logs -t --app esp8266-api-testing
 const port = process.env.PORT || 8080;
