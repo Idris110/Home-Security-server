@@ -19,8 +19,8 @@ let obj = {
     temp :"29",
     humid :"70",
     infra :"0",
-    bell :"0"
-
+    bell :"0",
+    lockBr :"0",
 };
 
     
@@ -53,7 +53,8 @@ app.post('/api/set', (req, res) => {
         temp :req.body.temp,
         humid :req.body.humid,
         infra :req.body.infra,
-        bell :req.body.bell
+        bell :req.body.bell,
+        lockBr :req.body.lockBr
     };
     console.log(req.body);
     res.send(obj);
