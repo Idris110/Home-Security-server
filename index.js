@@ -5,7 +5,12 @@ const app = express();
 app.use(express.json());
 
 let obj = {
-    us1 :"0"
+    us1 :"320",
+    us2 :"195",
+    temp :"29",
+    humid :"70",
+    infra :"1"
+
 };
 
     
@@ -32,12 +37,13 @@ app.get('/api', (req, res) => { //esp reads
 
 app.post('/api/set', (req, res) => {
 
-    obj = {
-        us1: req.body.light1,
-        // light2: req.body.light2,
-        // fan1: req.body.fan1,
-        // servo: req.body.ser
-    };
+    // obj = {
+    //     us1: req.body.light1,
+    //     light2: req.body.light2,
+    //     fan1: req.body.fan1,
+    //     servo: req.body.ser
+    // };
+    obj.us1 = req.body.us1;
     console.log(req.body);
     res.send(obj);
 });
