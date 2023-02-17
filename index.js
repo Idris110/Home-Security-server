@@ -1,9 +1,17 @@
 const express = require('express');
+const cors = require("cors");
 
 // const fetch = require('node-fetch');
 // const Joi = require('joi'); //used for validation
 const app = express();
+
+app.use(
+    cors({
+        origin:"http://localhost:3000",
+    })
+)
 app.use(express.json());
+
 
 let obj = {
     us1 :"320",
