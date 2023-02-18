@@ -12,8 +12,8 @@ app.use(express.json());
 
 
 let obj = {
-    us1 :"100",
-    us2 :"100",
+        us1 :"100",
+        us2 :"100",
     infra :"0",
     bell :"0",
     lockBr :"0"
@@ -75,7 +75,7 @@ app.post('/api/set', (req, res) => {
     obj = {
         us1: req.body.us1,
         us2 :req.body.us2,
-        temp :req.body.temp,
+        infra :req.body.infra,
         bell :req.body.bell,
         lockBr :req.body.lockBr
     };
